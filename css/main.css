@@ -32,8 +32,14 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
-  font-family: 'Open Sans'sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-Grey-dark-2);
@@ -64,6 +70,18 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 31.25em) {
+  .search {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+}
+
 .search__input {
   font-family: inherit;
   font-size: inherit;
@@ -75,13 +93,20 @@ body {
   width: 90%;
   -webkit-transition: all .3s;
   transition: all .3s;
-  margin-right: -3.2rem;
+  margin: 0 -3.5rem;
 }
 
 .search__input:focus {
   outline: none;
   width: 100%;
   background-color: var(--color-grey-light-3);
+}
+
+@media only screen and (max-width: 31.25em) {
+  .search__input:focus {
+    margin: 0 -3.2rem;
+    width: 95%;
+  }
 }
 
 .search__input::-moz-placeholder {
@@ -188,12 +213,35 @@ body {
   margin-top: 3.5rem;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .side-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+}
+
 .side-nav__item {
   position: relative;
 }
 
 .side-nav__item:not(:last-child) {
   margin-bottom: .8rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .side-nav__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .side-nav__item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .side-nav__item::before {
@@ -238,6 +286,25 @@ body {
   z-index: 10;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .side-nav__link {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 42.5em) {
+  .side-nav__link {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 1.5rem .5rem;
+  }
+}
+
 .side-nav__icon {
   width: 1.75rem;
   height: 1.75rem;
@@ -245,11 +312,26 @@ body {
   fill: currentColor;
 }
 
+@media only screen and (max-width: 42.5em) {
+  .side-nav__icon {
+    margin-right: 0;
+    margin-bottom: .75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
 .legal {
   font-size: 1.2rem;
   color: var(--color-grey-light-3);
   text-align: center;
   padding: 2.5rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .legal {
+    display: none;
+  }
 }
 
 .gallery {
@@ -282,6 +364,14 @@ body {
   color: var(--color-grey-dark-2);
 }
 
+@media only screen and (max-width: 42.5em) {
+  .overview__heading {
+    font-size: 2rem;
+    padding: 1.25rem 2rem;
+    letter-spacing: .5px;
+  }
+}
+
 .overview__stars {
   margin-right: auto;
   display: -webkit-box;
@@ -293,6 +383,13 @@ body {
   width: 1.75rem;
   height: 1.75rem;
   fill: var(--color-primary);
+}
+
+@media only screen and (max-width: 42.5em) {
+  .overview__icon-star, .overview__icon-location {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 }
 
 .overview__location {
@@ -331,15 +428,33 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 42.5em) {
+  .overview__rating {
+    padding: 0 1.5rem;
+  }
+}
+
 .overview__rating-average {
   font-size: 2.25rem;
   font-weight: 300;
   margin-bottom: -4px;
 }
 
+@media only screen and (max-width: 42.5em) {
+  .overview__rating-average {
+    font-size: 1.8rem;
+  }
+}
+
 .overview__rating-count {
   font-size: .8rem;
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 42.5em) {
+  .overview__rating-count {
+    font-size: .5rem;
+  }
 }
 
 .btn-inline {
@@ -469,15 +584,21 @@ body {
   margin-right: auto;
 }
 
+.recommend__firends {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .recommend__photo {
-  height: 5rem;
-  width: 5rem;
+  height: 4.5rem;
+  width: 4.5rem;
   border-radius: 50%;
   border: 3px solid #fff;
 }
 
 .recommend__photo:not(:last-child) {
-  margin-right: -1.5rem;
+  margin-right: -2rem;
 }
 
 .review {
@@ -490,10 +611,24 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 42.5em) {
+  .review {
+    margin-bottom: 3rem;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .review__text {
   margin-bottom: 2rem;
   z-index: 22;
   position: relative;
+}
+
+@media only screen and (max-width: 42.5em) {
+  .review__text {
+    margin-bottom: 1.2rem;
+  }
 }
 
 .review__user {
@@ -545,9 +680,24 @@ body {
   z-index: 1;
 }
 
+@media only screen and (max-width: 42.5em) {
+  .review::before {
+    top: -1.8rem;
+    left: -.5rem;
+    line-height: 1;
+    font-size: 15rem;
+  }
+}
+
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .cta {
+    padding: 2.5rem;
+  }
 }
 
 .cta__book-now {
@@ -619,6 +769,14 @@ body {
   min-height: 50rem;
 }
 
+@media only screen and (max-width: 84.375em) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 .header {
   font-size: 1.6rem;
   height: 7rem;
@@ -635,10 +793,29 @@ body {
           align-items: center;
 }
 
+@media only screen and (max-width: 31.25em) {
+  .header {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 11.5rem;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+  }
+}
+
 .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -677,6 +854,21 @@ body {
   border-bottom: var(--line);
 }
 
+@media only screen and (max-width: 56.25em) {
+  .detail {
+    padding: 3rem;
+  }
+}
+
+@media only screen and (max-width: 42.5em) {
+  .detail {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .discription {
   background-color: #fff;
   -webkit-box-shadow: var(--shadow-light);
@@ -686,6 +878,20 @@ body {
       -ms-flex: 0 0 60%;
           flex: 0 0 60%;
   margin-right: 4.5rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .discription {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+}
+
+@media only screen and (max-width: 42.5em) {
+  .discription {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
 }
 
 .user-reviews {
